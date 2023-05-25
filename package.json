@@ -1,7 +1,6 @@
 {
   "name": "labphase1",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -17,6 +16,10 @@
   "bugs": {
     "url": "https://github.com/Hella17/labphase1/issues"
   },
-  "homepage": "https://github.com/Hella17/labphase1#readme"
+  "homepage": "https://github.com/Hella17/labphase1#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
 }
-
