@@ -16,14 +16,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the front-end application...'
-                sh 'scp index.html user@your-web-server:/path/to/destination'
-                sh 'scp styles.css user@your-web-server:/path/to/destination'
-                sh 'scp index.js user@your-web-server:/path/to/destination'
-                echo 'Deployment completed!'
-            }
+
         }
     }
 
