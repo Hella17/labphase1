@@ -25,8 +25,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
+                // Add your deployment steps here
                 echo 'Deploying the backend application...'
-                // Add deployment steps here
             }
         }
     }
@@ -34,17 +34,14 @@ pipeline {
     post {
         always {
             echo 'Performing post-build actions...'
-            // Clean up steps, if any
         }
 
         success {
             echo 'Pipeline succeeded!'
-            // Success actions, if any
         }
 
         failure {
             echo 'Pipeline failed!'
-            // Failure actions, if any
         }
     }
 }
