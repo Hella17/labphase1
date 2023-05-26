@@ -18,10 +18,13 @@ pipeline {
 
     post {
         always {
+            echo 'Performing post-build actions...'
         }
         success {
+            echo 'Pipeline succeeded!'
         }
         failure {
+            echo 'Pipeline failed!'
         }
     }
 }
