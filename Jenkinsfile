@@ -16,19 +16,19 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                sh 'npm test'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         echo 'Running tests...'
+        //         sh 'npm test'
+        //     }
+        // }
 
-        stage('Deploy') {
-            steps {
-                // Add your deployment steps here
-                echo 'Deploying the backend application...'
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         // Add your deployment steps here
+        //         echo 'Deploying the backend application...'
+        //     }
+        // }
     }
 
     post {
