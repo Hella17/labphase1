@@ -1,0 +1,12 @@
+{
+  "name": "my-frontend-app",
+  "version": "1.0.0",
+  "description": "My HTML Frontend Application",
+  "scripts": {
+    "build": "echo 'Building the front-end application...'",
+    "test": "echo 'Running tests...'"
+  },
+  "dependencies": {
+    "http": "latest"
+  }
+}
