@@ -4,23 +4,39 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Add your build steps here
-                sh 'npm install' // Example: Installing dependencies
+                echo 'Building the front-end application...'
+                echo 'Build completed!'
             }
         }
 
         stage('Test') {
             steps {
-                // Add your test steps here
-                sh 'npm test' // Example: Running tests
+                echo 'Running tests...'
+                echo 'Tests completed!'
             }
         }
 
         stage('Deploy') {
             steps {
-                // Add your deployment steps here
-                sh 'npm run deploy' // Example: Deploying the application
+                echo 'Deploying the front-end application...'
+                sh 'scp index.html user@your-web-server:/path/to/destination'
+                sh 'scp styles.css user@your-web-server:/path/to/destination'
+                sh 'scp index.js user@your-web-server:/path/to/destination'
+                echo 'Deployment completed!'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Performing post-build actions...'
+            echo 'Post-build actions completed!'
+        }
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
         }
     }
 }
