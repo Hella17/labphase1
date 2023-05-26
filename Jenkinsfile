@@ -4,32 +4,24 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the front-end application...'
-                echo 'Build completed!'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                echo 'Tests completed!'
+                sh 'npm run test'
             }
-        }
-
-
         }
     }
 
     post {
         always {
-            echo 'Performing post-build actions...'
-            echo 'Post-build actions completed!'
         }
         success {
-            echo 'Pipeline succeeded!'
         }
         failure {
-            echo 'Pipeline failed!'
         }
     }
 }
