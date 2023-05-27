@@ -5,14 +5,17 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo 'Checking out the source code...'
-                checkout scm
+               checkout([$class: 'GitSCM', branches: [[name: '*/backend']],
+			extensions: [],
+			userRemoteConfigs: [[url: 'https://github.com/Hella17/labphase1.git']]])
             }
         }
 
         stage('Build') {
             steps {
                 echo 'Building the backend application...'
-                sh 'npm install'
+        sh "mvn -B -DskipTests clean  "
+        sh "mvn -B -DskipTests package "
             }
         }
         stage('Sonarqube Verification') {
