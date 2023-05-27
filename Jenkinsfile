@@ -16,7 +16,7 @@ pipeline {
             }
         }
         stage('Sonarqube Verification') {
-            sonar-scanner -Dsonar.projectKey=labphase -Dsonar.sources=. -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=141610cdfadfe7ec8d3eb001404b32bdeff84af3
+            sh "sonar-scanner -Dsonar.projectKey=labphase -Dsonar.sources=. -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=141610cdfadfe7ec8d3eb001404b32bdeff84af3"
         }
     }
 
