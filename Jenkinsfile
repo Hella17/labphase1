@@ -15,7 +15,7 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Sonarqube Verification') 
+        stage('Sonarqube Verification') {
         steps {
             sh "sonar-scanner -Dsonar.projectKey=labphase -Dsonar.sources=. -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=141610cdfadfe7ec8d3eb001404b32bdeff84af3"
         }}
