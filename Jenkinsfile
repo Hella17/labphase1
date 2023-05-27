@@ -15,20 +15,9 @@ pipeline {
                 sh 'npm install'
             }
         }
-
-        // stage('Test') {
-        //     steps {
-        //         echo 'Running tests...'
-        //         sh 'npm test'
-        //     }
-        // }
-
-        // stage('Deploy') {
-        //     steps {
-        //         // Add your deployment steps here
-        //         echo 'Deploying the backend application...'
-        //     }
-        // }
+        stage('Sonarqube Verification') {
+            sonar-scanner -Dsonar.projectKey=labphase -Dsonar.sources=. -Dsonar.host.url=http://172.10.0.140:9000 -Dsonar.login=141610cdfadfe7ec8d3eb001404b32bdeff84af3
+        }
     }
 
     post {
